@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
+import MainRouter from '../src/router/mainRouter'
 function App() {
 
   return (
-    <NavBar/>
+    <div>
+      <MainRouter/>
+    </div>
   )
 }
 
