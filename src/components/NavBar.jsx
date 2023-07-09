@@ -6,7 +6,7 @@ const NavBar = () => {
         
         <nav className="navbar navbar-expand-lg bg-warning">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Air Soft Shop</a>
+                <a className="navbar-brand" href="/Products">Air Soft Shop</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -18,9 +18,9 @@ const NavBar = () => {
                                 Categories
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">AEG Primary</a></li>
-                                <li><a className="dropdown-item" href="#">GBB Secondary</a></li>
-                                <li><a className="dropdown-item" href="#">Equipment</a></li>
+                                <li><a className="dropdown-item" href="Categories/AEG - Primary">AEG Primary</a></li>
+                                <li><a className="dropdown-item" href="Categories/GBB secondary">GBB Secondary</a></li>
+                                <li><a className="dropdown-item" href="Categories/Spring - Primary">Spring - Primary</a></li>
                             </ul>
                         </li>
                         

@@ -1,27 +1,34 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-export const itemDetailContainer = (props) => {
-    
+import AddItemButton from './AddItemButton';
+export const ItemDetailContainer = (props) => {
+    if(props.props.dataProd){
         return(
-            <div>
-                <div className="card" style={{width: "18rem"}}>
-                        <img src={props.images[0]} className="card-img-top" alt="..."></img>
-                        <div className="card-body">
-                            <h5 className="card-title">{props.title}</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">{props.price}</li>
-                            <li className="list-group-item">{props.description}</li>
-                            <li className="list-group-item">A third item</li>
-                        </ul>
-                        <div className="card-body">
-                            <a href="#" className="card-link">Card link</a>
-                            <a href="#" className="card-link">Another link</a>
-                        </div>
+            <div className="card text-center">
+                {console.log(props.props.dataProd)}
+                <div className="card-header">
+                    {props.props.dataProd.descripcion}
+                </div>
+                <div className="card-body">
+                    <h1 className="card-title">{props.props.dataProd.title} - U$D {props.props.dataProd.price}</h1>
+                    <img src={props.props.dataProd.url} />
+                    <AddItemButton props={props.props.dataProd.id}/>
+                </div>
+                <div className="card-footer text-body-secondary">
+                    Stock disponible: {props.props.dataProd.stock}
                 </div>
             </div>
         )
+    }
+    else{
+        return(
+            <div>
+                <h1>ERROR! El producto que intentas buscar no existe</h1>
+                <h1>Por favor intentá nuevamente con un id valido.</h1>
+            </div>
+        )
+    }
+        
 }
 
-export default itemDetailContainer
+export default ItemDetailContainer

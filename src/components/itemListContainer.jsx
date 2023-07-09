@@ -1,24 +1,23 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import AddItemButton from './AddItemButton';
 
-export const ItemListContainer = () => {
-    const [dataProds, setDataProds] = useState([])
-    useEffect(()=>{
-        fetch('https://dummyjson.com/products/1')
-        .then(res => res.json()).then(json => {setDataProds(json.products); console.log(json.products)})
-    },[])
-    // console.log(json.products) setDataProds(json.products)
+export const ItemListContainer = (props) => {
     return (
-        <div>
-            {dataProds.map((product, index)=>{
-                {console.log(product)}
-                return(
-                <div>
-                    {product.title}
-                    <img src={product.images[0]}></img>
-                </div>
-                )
-        })}
+        <div class="col-sm-3">
+            <div className="card" style={{width: "16rem", margin: "25px"}}>
+                    <img src={props.props.url} className="card-img-top" alt="..."></img>
+                    <div className="card-body">
+                        <h5 className="card-title">{props.props.title}</h5>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">US$ {props.props.price}</li>
+                        <li className="list-group-item">{props.props.descripcion}</li>
+                    </ul>
+                    <div className="card-body text-center">
+                        <AddItemButton props={props.props.id}/>
+                        <a style={{margin: "10px"}} href={"/Products/"+props.props.id} className="card-link btn btn-warning">Mas detalles</a>
+                    </div>
+            </div>
         </div>
     )
 

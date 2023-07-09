@@ -1,10 +1,10 @@
 import React from 'react'
-import ItemListContainer from '../components/itemListContainer';
-import { useState, useEffect } from 'react';
-import ItemDetailContainer from '../components/itemDetailContainer';
+import ItemList from '../components/itemList'
 export const Products = () => {
     return(
-        <ItemDetailContainer/>
+        <div className='row'>
+            <ItemList props="productos"/>
+        </div>
     )
 }
 export default Products
